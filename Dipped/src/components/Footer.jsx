@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 
 
-export default function Footer() {
+function Footer() {
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }
@@ -59,4 +59,4 @@ export default function Footer() {
   )
 }
 
-// export default Footer
+export default Footer
