@@ -1,0 +1,13 @@
+/* src/App.css */
+/* Component-specific styles go in each component file.
+   App.css is intentionally minimal. */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
