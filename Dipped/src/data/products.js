@@ -7,9 +7,9 @@ export const products = [
     description:
       'Moist, flavourful cake centres dipped in smooth Belgian chocolate and decorated to perfection. Perfect for parties, gifting, or just because.',
     images: [
-        '/cake-pop1.jpeg',
-        '/cake-pop2.jpeg',
-        '/cake-pop3.jpeg',
+        '/cake-pops/cake-pop1.jpg',
+        '/cake-pops/cake-pop2.jpg',
+        '/cake-pops/cake-pop3.jpg',
     ],
     priceFrom: 25,
     priceUnit: 'pop',
@@ -26,9 +26,9 @@ export const products = [
     description:
       'Fresh strawberries hand-dipped in Belgian chocolate and decorated with your choice of toppings.',
     images: [
-      '/strawberriespng',
-      '/strawberries1.jpg',
-      '/strawberries2.jpeg',
+      '/strawberries/strawberries.png',
+      '/strawberries/strawberries1.jpg',
+      '/strawberries/strawberries2.jpeg',
     ],
     priceFrom: 18,
     priceUnit: 'each',
@@ -44,10 +44,10 @@ export const products = [
     description:
       'The perfect sweet-salty combo — crispy pretzels dipped in rich chocolate and finished with beautiful toppings.',
     images: [
-      '/pretzels1.jpg',
-      '/pretzels2.jpg',
-      '/pretzels3.jpeg',
-      '/pretzels.jpg',
+      '/pretzels/pretzel1.jpg',
+      '/pretzels/pretzel2.jpg',
+      '/pretzels/pretzel3.jpeg',
+      '/pretzels/pretzels.jpg',
     ],
     priceFrom: 12,
     priceUnit: 'each',
@@ -63,10 +63,10 @@ export const products = [
     description:
       'Rich, fudgy brownies dipped and decorated — a crowd favourite for treat boxes and events.',
     images: [
-      '/brownie1.jpeg',
-      '/brownie2.jpg',
-      '/brownie3.jpg',
-      '/brownie.jpeg',
+      '/brownies/brownies1.jpeg',
+      '/brownies/brownies2.jpg',
+      '/brownies/brownies3.jpg',
+      '/brownies/brownies.jpeg',
     ],
     priceFrom: 20,
     priceUnit: 'each',
@@ -82,10 +82,10 @@ export const products = [
     description:
       'Light and crispy rice krispie squares dipped in chocolate and customised to match any theme or colour palette.',
     images: [
-      '/rice-krispie.jpg',
-      '/rice-krispie1.jpg',
-      '/rice-krispie2.jpg',
-      '/rice-krispie3.jpg',
+      '/rice-krispies/rice-krispie.jpg',
+      '/rice-krispies/ricekrispie1.jpg',
+      '/rice-krispies/ricekrispie2.jpg',
+      '/rice-krispies/ricekrispie3.jpg',
     ],
     priceFrom: 15,
     priceUnit: 'each',
@@ -101,9 +101,9 @@ export const products = [
     description:
       'Fluffy cupcakes topped with silky buttercream and decorated to match your theme — a showstopper at any event.',
     images: [
-      '/cupcakes.jpeg',
-      '/cupcake1.jpeg',
-      '/cupcake2.jpeg',
+      '/cupcakes/cupcakes.jpeg',
+      '/cupcakes/cupcake1.jpeg',
+      '/cupcakes/cupcake2.jpg',
     ],
     priceFrom: 22,
     priceUnit: 'each',

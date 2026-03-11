@@ -35,7 +35,7 @@ body {
   background: var(--cream);
   color: var(--text);
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
 }
 
 img {
@@ -49,7 +49,7 @@ a {
 }
 
 button {
-  cursor: none;
+  cursor: pointer;
   font-family: var(--font-body);
   border: none;
   background: none;

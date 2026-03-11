@@ -52,26 +52,26 @@ function Hero() {
           little something special.
         </p>
         <div className="heroButtons">
-          
+          <a
             href="#products"
             className="btnPrimary"
             onClick={e => {
               e.preventDefault()
               document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })
             }}
-              <>
-                Explore our treats
-              </>   
-          
+          >
+            Explore our treats
+          </a>
+          <a
             href="#order"
             className="btnGhost"
             onClick={e => {
               e.preventDefault()
               document.getElementById('order')?.scrollIntoView({ behavior: 'smooth' })
             }}
-          <>
+          >
             Place an order
-          </>
+          </a>
         </div>
       </div>
 

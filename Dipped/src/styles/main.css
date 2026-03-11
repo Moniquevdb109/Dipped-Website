@@ -45,7 +45,7 @@
   color: var(--text-light);
   background: none;
   border: none;
-  cursor: none;
+  cursor: pointer;
   transition: color 0.2s;
   font-family: var(--font-body);
 }
@@ -664,4 +664,502 @@
   .navbar__cta { display: none; }
   .navbar__hamburger { display: flex; }
   .navbar__mobile { display: flex; }
+}
+/* ── Modal ─────────────────────────────────────────────── */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(61, 31, 34, 0.55);
+  backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.modalBox {
+  background: var(--cream);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s ease;
+  border: 1px solid rgba(217, 140, 160, 0.2);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.75rem 1.75rem 0;
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--chocolate);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--chocolate);
+  opacity: 0.35;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  transition: opacity 0.2s;
+  letter-spacing: 0.05em;
+}
+.modalClose:hover { opacity: 1; }
+
+.modalImg {
+  width: 100%;
+  height: 200px;
+  margin: 1.25rem 0 0;
+  overflow: hidden;
+}
+.modalImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+}
+
+.modalOptions {
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.quantityRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.qtyBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--muted-rose);
+  background: none;
+  color: var(--chocolate);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.qtyBtn:hover {
+  background: var(--deep-rose);
+  border-color: var(--deep-rose);
+  color: white;
+}
+
+.qtyValue {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  min-width: 24px;
+  text-align: center;
+  color: var(--chocolate);
+}
+
+.qtyUnit {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  letter-spacing: 0.03em;
+}
+
+.modalNotes {
+  width: 100%;
+  border: 1px solid var(--muted-rose);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: white;
+  resize: vertical;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+.modalNotes::placeholder { color: var(--text-light); opacity: 0.6; }
+.modalNotes:focus {
+  outline: none;
+  border-color: var(--deep-rose);
+}
+
+.modalFooter {
+  padding: 1.25rem 1.75rem 1.75rem;
+  border-top: 1px solid rgba(217, 140, 160, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: white;
+}
+
+.modalTotal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.modalTotal span {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.modalTotal strong {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--chocolate);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.footer {
+  background: var(--chocolate);
+  color: var(--blush);
+  padding: 5rem 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative blush glow */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(242,196,206,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footerInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(242, 196, 206, 0.12);
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footerLogo {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--blush);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+.footerLogo span { color: var(--rose); }
+
+.footerTagline {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(242, 196, 206, 0.5);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 260px;
+}
+
+.footerCol h5 {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin: 0 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.footerCol h5::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footerCol button {
+  background: none;
+  border: none;
+  color: rgba(242, 196, 206, 0.55);
+  font-size: 0.88rem;
+  font-weight: 300;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  font-family: var(--font-body);
+  transition: color 0.2s;
+  letter-spacing: 0.02em;
+}
+.footerCol button:hover { color: var(--blush); }
+
+/* WhatsApp button inside footer */
+.footer .whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(242, 196, 206, 0.08);
+  border: 1px solid rgba(242, 196, 206, 0.2);
+  color: var(--blush);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.2rem;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.25s, border-color 0.25s;
+  align-self: flex-start;
+}
+.footer .whatsappBtn:hover {
+  background: rgba(242, 196, 206, 0.15);
+  border-color: rgba(242, 196, 206, 0.4);
+}
+.footer .whatsappBtn svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--blush);
+  flex-shrink: 0;
+}
+
+.footerBottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(242, 196, 206, 0.25);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .footer { padding: 4rem 1.5rem 0; }
+  .footerInner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+
+
+/* ── WhatsApp Button (global) ───────────────────────────── */
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: white;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2px;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: background 0.25s, transform 0.2s;
+  align-self: flex-start;
+}
+.whatsappBtn:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+}
+.whatsappBtn svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+  flex-shrink: 0;
+}
+
+/* ── Order / Contact Section ────────────────────────────── */
+.order {
+  background: var(--cream);
+  padding: 7rem 5rem;
+}
+
+.orderInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.orderLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.orderIntro {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.75;
+  max-width: 340px;
+}
+
+.orDivider {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.orDivider::before,
+.orDivider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--muted-rose);
+  opacity: 0.4;
+  max-width: 40px;
+}
+
+/* Form */
+.orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.formGroup label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-family: var(--font-body);
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  border: 1px solid var(--muted-rose);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--text);
+  background: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  appearance: auto;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: var(--deep-rose);
+  box-shadow: 0 0 0 3px rgba(181, 99, 122, 0.08);
+}
+
+.formGroup textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.btnSubmit {
+  background: var(--deep-rose);
+  color: white;
+  border: none;
+  padding: 1rem 2.4rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+.btnSubmit:hover {
+  background: var(--chocolate);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .order { padding: 5rem 2rem; }
+  .orderInner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .formRow { grid-template-columns: 1fr; }
 }
